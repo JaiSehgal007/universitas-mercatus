@@ -33,7 +33,7 @@ app.get('/',(req,res)=>{
     // res.send({
     //     message:"Welcome to the College Market"
     // })
-    res.send("<h1>welcome to the college market</h1>")
+    res.send("<h1>welcome to the universitas mercatus</h1>")
 })
 
 // PORT
