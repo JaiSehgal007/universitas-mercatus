@@ -1,5 +1,5 @@
 import express from 'express'
-import {registerController,loginController,testController} from '../controllers/authController.js'
+import {registerController,loginController,testController,forgotPasswordController} from '../controllers/authController.js'
 import { isAdmin, requireSignIn } from '../middlewares/authMiddleware.js';
 // router object -> as we are doing routing in seprate file
 const router =express.Router()
@@ -16,6 +16,9 @@ router.post('/register',registerController);
 // Login || POST
 
 router.post('/login',loginController);
+
+// Forgot Password (Here we are using a question to track password, as the otp services are paid)
+router.post('/forgot-password',forgotPasswordController);
 
 // Test Routes
 
