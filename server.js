@@ -9,6 +9,7 @@ import dotenv from 'dotenv'
 import morgan from 'morgan'
 import connectDB from './config/db.js'
 import authRoutes from './routes/authRoutes.js'
+import cors from 'cors';
 
 // configuring the env file, as this is in some different folder, so we need to specify path
 // not here in our case it is in the sam root so we need not define
@@ -21,6 +22,7 @@ connectDB();
 const app=express();
 
 // middleware
+app.use(cors());
 app.use(express.json())
 app.use(morgan('dev'))
 // initially we used body parser but now we get the feature off express.json() so we use it

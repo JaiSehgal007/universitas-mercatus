@@ -10,19 +10,19 @@ export const registerController = async (req, res) => {
 
         // validation
         if (!name) {
-            return res.send({ error: "name is required" });
+            return res.send({success:false, message: "name is required" });
         }
         if (!email) {
-            return res.send({ error: "email is required" });
+            return res.send({success:false, message: "email is required" });
         }
         if (!password) {
-            return res.send({ error: "password is required" });
+            return res.send({success:false, message: "password is required" });
         }
         if (!phone) {
-            return res.send({ error: "phone number is required" });
+            return res.send({success:false, message: "phone number is required" });
         }
         if (!address) {
-            return res.send({ error: "address is required" });
+            return res.send({success:false, message: "address is required" });
         }
 
         // find existing user
@@ -31,7 +31,7 @@ export const registerController = async (req, res) => {
         // existing user check
         if (existinguser) {
             return res.status(200).send({
-                success:true,
+                success:false,
                 message: 'user already registered',
             });
         }
